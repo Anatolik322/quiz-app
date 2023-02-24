@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import './adminPanel.css'
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.css';
+
 function AdminPanel(props) {
+
   const { data, setData } = props;
   const [title, setTitle] = useState("");
   const [variants, setVariants] = useState("");
@@ -11,20 +13,19 @@ function AdminPanel(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    
     const newQuestion = {
       title: title,
       variants: variants.split(' '),
       correct: correct
     }
-    //const arr = [newQuestion]
+  
     let newData = [...data, newQuestion];
-    console.log(newData);
-    if(title.length > 0 && variants.length > 0 )
-    setData(newData); 
-    setTitle("");
-    setVariants("");
-    setCorrect(0);
+    if(title.length > 0 && variants.length > 0 ){
+     setData(newData); 
+     setTitle("");
+     setVariants("");
+     setCorrect(0);
+    }
   };
 
   
@@ -63,9 +64,9 @@ function AdminPanel(props) {
       </Label>
       <Label>
         correct:
-        <Input type="number" value={correct} onChange={(e) => setCorrect(e.target.value)} />
+        <Input type="number" value={correct} onChange={(e) => setCorrect(+e.target.value)} />
       </Label>
-      <Button type="submit">add</Button>
+      <Button >add</Button>
     </FormGroup>
     </Form>
 

@@ -6,7 +6,7 @@ export default function Header({setAdminClick, setPasswordIs }){
 
 
     return(
-        <Navbar className="nav"
+        <Navbar className="nav justify-content-around"
         color="dark"
         dark>
             <NavItem><span onClick={() => {setAdminClick(false);setPasswordIs(false)}} >Game</span></NavItem>

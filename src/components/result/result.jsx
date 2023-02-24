@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card, CardTitle, CardText, Button} from "reactstrap";
 
 export default function Result({correctAns, allQestion, onTryAgain}){
-    return(
+  return(
     <div className=" box d-flex  align-items-center">
         <Card 
          className="my-2 "
@@ -22,5 +22,5 @@ export default function Result({correctAns, allQestion, onTryAgain}){
         </Card>
     </div>
     
-    )
+  )
 }

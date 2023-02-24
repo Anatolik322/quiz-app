@@ -34,7 +34,8 @@ function App() {
   const password = 'admin'
   const qestion = data[step];
   const allQestionLength = data.length;
-
+  let percentage = Math.round(step/allQestionLength * 100);
+  
   const onClickVariant = (id) =>{
     console.log(id)
     if(id === qestion.correct){
@@ -49,7 +50,7 @@ function App() {
   }
 
   return(
-  <div className='App'>
+   <div className='App'>
     <Header
      setAdminClick = {setAdminClick}
      setPasswordIs = {setPasswordIs} />
@@ -69,6 +70,7 @@ function App() {
     } 
     {
       step !== data.length && !adminClick && <Game
+      percentage = {percentage}
       qestion = {qestion} 
       onClickVariant = {onClickVariant}/>
     }
@@ -79,7 +81,7 @@ function App() {
       onTryAgain = {onTryAgain}  />
     }
     
-  </div>
+   </div>
     
   )
 }

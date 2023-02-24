@@ -1,33 +1,33 @@
 import React, {useRef}  from "react";
-//import AdminPanel from "../adminPanel";
+import './adminForm.css'
 import { Form, FormGroup, Input, Label, Button, Alert } from "reactstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function AdminForm(props){
     
-    let request = useRef(<Alert color="danger">
+    let request = useRef(<Alert color="danger"
+    className="password-alert">
     please check password!
     </Alert>);
-   
+    
     const onHandleSubmit = e => {
         e.preventDefault();
         if(props.passwordInp === props.password){
             props.setPasswordIs(true);
-            request.current = <Alert >
+            request.current = <Alert className="password-alert">
             password correct
             </Alert>
         }
         
     }
+
     const onChangeValue = e => {
-        console.log(e.target.value)
         props.setPasswordInp(e.target.value);
     }
     
    
     return(
         <>
-       
         <Form onSubmit={onHandleSubmit} className="d-flex justify-content-center">
             <FormGroup>
              <Label for="exampleEmail">
